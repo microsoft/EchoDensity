@@ -1,3 +1,9 @@
+# Visual studio temps
+.vs/
+
+# Matlab intermediate files
+*.asv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

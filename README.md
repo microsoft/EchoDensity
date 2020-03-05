@@ -1,53 +1,49 @@
----
-page_type: sample
-languages:
-- csharp
-products:
-- dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
----
+# Echo density measure
+These scripts and data illustrate the "Sorted Center Time" measure for temporal echo density in impulse response signals that was proposed in the paper: 
 
-# Official Microsoft Sample
-
-<!-- 
-Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
-
-Guidance on onboarding samples to docs.microsoft.com/samples: https://review.docs.microsoft.com/help/onboard/admin/samples/process/onboarding?branch=master
-
-Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
--->
-
-Give a short description for your sample here. What does it do and why is it important?
+[**A Sparsity Measure for Echo Density Growth in General Environments,**](https://www.microsoft.com/en-us/research/uploads/prod/2019/04/A_sparsity_measure_for_echo_density_growth_in_general_environments8.pdf)<br/> Helena Peic Tukuljac, Ville Pulkki, Hannes Gamper, Keith Godin, Ivan Tashev, Nikunj Raghuvanshi,<br/>*IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), May 2019*
 
 ## Contents
-
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
-
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
+| File/folder       | Description                         |
+|-------------------|-------------------------------------|
+| `Figs_1_2.m` | Generates Figures 1 and 2 from the paper, demonstrating step-by-step application of the complete algorithm to a shoebox impulse response. |
+| `Fig_6.m` | Generates Figure 6 in paper, illustrating changes in echo density by computing echo density curves on IRs for a series of shoeboxes with ceiling progressively slid open, and fitting the temporal echo density model proposed in the paper, implemented in the function `curve_fitting()`. |
+| `core/` | Main signal processing algorithms |
+| `data/` | Synthetic impulse response data usable with the scripts |
+| `README.md`       | This README file. |
 | `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
 
 ## Prerequisites
 
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
+Matlab scripts were tested on R2018a
 
-## Setup
+## Notes
+- The algorithms here compute the echo density as an *unnormalized* percentage value that is 0 for a Dirac delta and 50 for a constant signal. 
+- Divide with the value obtained from `gaussian_measure()` to turn sorted-center-time into an echo density that is 1 for Gaussian noise.
 
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
+## Citing
+If you employ the data or algorithms, please cite using Bibtex key below.
 
-## Running the sample
+```
+@inproceedings{Tukuljac_EchoDensity:2019,
+author={H. P. {Tukuljac} and V. {Pulkki} and H. {Gamper} and K. {Godin} and I. J. {Tashev} and N. {Raghuvanshi}},
+booktitle={ICASSP 2019 - IEEE International Conference on Acoustics, Speech and Signal Processing},
+title={A Sparsity Measure for Echo Density Growth in General Environments},
+month={May},
+year={2019},
+volume={},
+number={},
+pages={},
+doi={10.1109/ICASSP.2019.8682878},
+ISSN={1520-6149},
+keywords={acoustic analysis;architectural acoustics;echo;geometry;numerical analysis;statistical analysis;transient response;detailed temporal evolution;acoustic analysis;general environments;smooth sorted density measure;echo density growth;general power-law model;measured simulated impulse responses;numerically simulated impulse responses;growth power;sparsity measure;simple room geometries;complex scenes;statistical parameter;indoor response;outdoor response;Density measurement;Acoustic measurements;Microsoft Windows;Reverberation;Market research;Geometry;impulse response;echo density;mixing time;outdoor acoustics;parametric models;statistical signal processing},
+}
+```
 
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
+## License
+Code is released under MIT License, consult LICENSE file in root folder.
 
-## Key concepts
-
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+The data is released under the [Open Use of Data Agreement](https://github.com/microsoft/Open-Use-of-Data-Agreement/blob/master/O-UDA-1.0.md).
 
 ## Contributing
 
