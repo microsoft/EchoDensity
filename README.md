@@ -1,5 +1,5 @@
 # Echo density measure
-These scripts and data illustrate the "Sorted Center Time" measure for temporal echo density in impulse response signals that was proposed in the paper: 
+These scripts and data illustrate the "Sorted Center Time" measure for temporal echo density in impulse response signals that is proposed in the following paper: 
 
 [**A Sparsity Measure for Echo Density Growth in General Environments,**](https://www.microsoft.com/en-us/research/uploads/prod/2019/04/A_sparsity_measure_for_echo_density_growth_in_general_environments8.pdf)<br/> Helena Peic Tukuljac, Ville Pulkki, Hannes Gamper, Keith Godin, Ivan Tashev, Nikunj Raghuvanshi,<br/>*IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), May 2019*
 
@@ -19,9 +19,9 @@ Matlab scripts were tested on R2018a
 
 ## Notes
 - The algorithms here compute the echo density as an *unnormalized* percentage value that is 0 for a Dirac delta and 50 for a constant signal. 
-- Divide with the value obtained from `gaussian_measure()` to turn sorted-center-time into an echo density that is 1 for Gaussian noise.
+- Divide with the value obtained from `gaussian_measure()` to turn sorted-center-time into a normalized echo density that is 0 for Dirac impulse and 1 for Gaussian noise.
 
-## Citing
+## Citation
 If you employ the data or algorithms, please cite using Bibtex key below.
 
 ```
@@ -41,9 +41,8 @@ keywords={acoustic analysis;architectural acoustics;echo;geometry;numerical anal
 ```
 
 ## License
-Code is released under MIT License, consult LICENSE file in root folder.
-
-The data is released under the [Open Use of Data Agreement](https://github.com/microsoft/Open-Use-of-Data-Agreement/blob/master/O-UDA-1.0.md).
+Code is licensed under [MIT License](./MIT_License).
+Data is licensed under the [Open Use of Data Agreement (O-UDA)](https://github.com/microsoft/Open-Use-of-Data-Agreement/blob/master/O-UDA-1.0.md). These allow open use for academic and commercial applications.
 
 ## Contributing
 
